@@ -9,6 +9,15 @@
   "author": "Chris Henry <henry.christopher@gmail.com> (http://chr.ishenry.com)",
   "license": "ISC",
   "dependencies": {
-    "botkit": "^0.2.2"
+    "async": "^2.1.4",
+    "botkit": "^0.2.2",
+    "cheerio": "^0.22.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "request": "^2.79.0",
+    "striptags": "^2.2.1"
+  },
+  "devDependencies": {
+    "better-stack-traces": "^1.1.0"
   }
 }
