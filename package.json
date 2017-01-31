@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bot": "node bot/bot.js"
+    "bot": "nodemon bot/bot.js"
   },
   "author": "Chris Henry <henry.christopher@gmail.com> (http://chr.ishenry.com)",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "cheerio": "^0.22.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^1.2.0",
+    "nodemon": "^1.11.0",
     "request": "^2.79.0",
     "striptags": "^2.2.1"
   },
