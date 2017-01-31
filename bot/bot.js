@@ -23,8 +23,12 @@ controller.hears(['uptime', 'identify yourself', 'who are you', 'what is your na
 
         bot.reply(message,
             ':robot_face: I am a bot named <@' + bot.identity.name +
-             '>. I have been running for ' + uptime + ' on ' + hostname + '.');
+             '>. I have been running for ' + uptime);
 
+});
+
+controller.hears(['government'], 'ambient', function(bot, message){
+    bot.reply(message, "The government is horribly inefficient.")
 });
 
 function formatUptime(uptime) {
@@ -44,3 +48,7 @@ function formatUptime(uptime) {
     uptime = uptime + ' ' + unit;
     return uptime;
 }
+
+
+
+
