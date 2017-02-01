@@ -1,5 +1,6 @@
 var Botkit = require('botkit');
 var os = require('os');
+var giphy = require('giphy-api')();
 
 var controller = Botkit.slackbot({
   debug: true
@@ -29,6 +30,13 @@ controller.hears(['uptime', 'identify yourself', 'who are you', 'what is your na
 
 controller.hears(['government'], 'ambient', function(bot, message){
     bot.reply(message, "The government is horribly inefficient.")
+});
+
+controller.hears(['gif'], 'ambient', function(bot, message){
+    giphy.search('ron swanson', function(err, res) {
+        var gif_url = res['data'][0]['images']['original']['url'];
+        bot.reply(message, gif_url)
+    });
 });
 
 function formatUptime(uptime) {
