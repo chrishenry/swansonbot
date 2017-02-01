@@ -33,8 +33,13 @@ controller.hears(['government'], 'ambient', function(bot, message){
 });
 
 controller.hears(['gif'], 'ambient', function(bot, message){
-    giphy.search('ron swanson', function(err, res) {
-        var gif_url = res['data'][0]['images']['original']['url'];
+
+    var search_text = message.text.replace('gif ', '');
+
+
+    giphy.search('ron swanson ' + search_text, function(err, res) {
+        var gif_len = res['data'].length;
+        var gif_url = res['data'][getRandomInt(0, gif_len)]['images']['original']['url'];
         bot.reply(message, gif_url)
     });
 });
@@ -57,6 +62,10 @@ function formatUptime(uptime) {
     return uptime;
 }
 
-
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 
