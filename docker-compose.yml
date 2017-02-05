@@ -1,0 +1,9 @@
+version: '2'
+services:
+  bot:
+    build:
+      context: .
+    env_file: .env
+    volumes:
+      - .:/usr/src/app/
+
